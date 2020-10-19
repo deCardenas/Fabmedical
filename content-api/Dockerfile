@@ -1,7 +1,8 @@
 FROM node:alpine AS base
 RUN apk -U add curl
 WORKDIR /usr/src/app
-EXPOSE 3001
+ENV CONTENT_API_URL htt://localhost:3001
+EXPOSE 3000
 
 FROM node:argon AS build
 WORKDIR /usr/src/app
